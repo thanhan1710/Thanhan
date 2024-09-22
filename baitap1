@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Nhân Viên Văn Phòng </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quản lý Nhân viên Văn Phòng</h1>
+
+<h2>Thêm Nhân Viên</h2>
+<form id="addForm">
+    <input type="text" id="name" placeholder="Tên Nhân viên" required>
+    <input type="text" id="subject" placeholder="chức vụ" required>
+    <input type="text" id="subject" placeholder="nhóm" required>
+    <button type="submit">Thêm</button>
+</form>
+
+<h2>Tìm kiếm Nhân viên</h2>
+<input type="text" id="searchInput" placeholder="Tìm theo tên" onkeyup="search()">
+
+<table>
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>phòng làm việc</th>
+            <th>chức vụ</th>
+        </tr>
+    </thead>
+    <tbody id="teacherTable">
+        <!-- Danh sách nhân viên sẽ được thêm vào đây -->
+    </tbody>
+</table>
+
+<script>
+    const teacherTable = document.getElementById('teacherTable');
+    const addForm = document.getElementById('addForm');
+
+    // Mảng lưu trữ nhân viên
+    let teachers = [];
+
+    // Thêm nhân viên
+    addForm.onsubmit = function (e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const subject = document.getElementById('subject').value;
+
+        const staff = { name, subject };
+        teachers.push(staff);
+        renderTable();
+        addForm.reset();
+    };
+
+    // Hiển thị danh sách nhân viên
+    function renderTable() {
+        teacherTable.innerHTML = '';
+        teachers.forEach((staff, index) => {
+            const row = `<tr>
+                <td>${staff.name}</td>
+                <td>${staff.subject}</td>
+                <td>
+                    <button onclick="editTeacher(${index})">Sửa</button>
+                    <button onclick="deleteTeacher(${index})">Xóa</button>
+                </td>
+            </tr>`;
+            staffTable.innerHTML += row;
+        });
+    }
+
+    // Sửa nhân viên
+    function editStaff(index) {
+        const name = prompt("Nhập tên mới:", teachers[index].name);
+        const subject = prompt("Nhập phòng mới:", staffs[index].subject);
+        if (name && subject) {
+            staffs[index] = { name, subject };
+            renderTable();
+        }
+    }
+
+    // Xóa nhân viên
+    function deleteTeacher(index) {
+        teachers.splice(index, 1);
+        renderTable();
+    }
+
+    // Tìm kiếm nhân viên
+    function searchStaff() {
+const input = document.getElementById('searchInput').value.toLowerCase();
