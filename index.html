@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Example</title>
+    <style>
+        /* CSS for tabs */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #b6b4b4;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+
+        /* CSS for header, main, and footer */
+        header {
+            background-color: #4e6ff3;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+        }
+
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+       
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 5px 0;
+        }
+
+        /* Additional styling for tabs in the main section */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .pick-up {
+            margin-top: 20px;
+           
+        }
+        
+    </style>
+</head>
+
+<body>
+</style>
+
+</head>
+
+<body>
+
+<div class="tab">
+
+<button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen">Home </button>
+<button class="tablinks" onclick="openTab(event, 'tab2')"> About</button>
+<button class="tablinks" onclick="openTab(event, 'tab3')">lab</button>
+
+
+<header>
+    <div id="tab1" class="tabcontent">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <input type="text" name="username" placeholder="Enter your username (Max 255 characters)" required>
+            <input type="password" name="password" placeholder="Enter your password (Max 255 characters)" required>
+            <input type="email" name="email" placeholder="Enter your email address (Max 255 characters)" required>
+            <input type="text" name="fullname" placeholder="Enter your full name">
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <input type="file" name="profilePicture" accept="image/*">
+            <div class="preview"></div>
+            <p>Account Created At: <span id="createdAt"></span></p>
+            <p>Last Updated At: <span id="updatedAt"></span></p>
+            <button type="submit" id="submitButton" disabled>Create Account</button>
+            <button type="button" id="cancelButton">Cancel</button>
+        </form>
+    </div>
+</header>
+
+    
+    <div id="tab2" class="tabcontent">
+
+        <h3>Tab 2 Content</h3>
+        
+        <p>Content for Tab 2 goes here.</p>
+        
+        </div>
+        
+        <div id="tab3" class="tabcontent">
+            <button class="tablinks" onclick="openTab(event, 'tab4')" id="defaultOpen">digital</button>
+            <button class="tablinks" onclick="openTab(event, 'tab5')" id="defaultOpen">lab1</button>
+            <button class="tablinks" onclick="openTab(event, 'tab6')" id="defaultOpen">lab2</button>
+            <button class="tablinks" onclick="openTab(event, 'tab7')" id="defaultOpen">lab3</button>
+            <button class="tablinks" onclick="openTab(event, 'tab8')" id="defaultOpen">lab4</button>
+        </div>
+        
+        <div id="tab4" class="tabcontent">
+            <header>
+                <h1>Chuyển Đổi Số Doanh Nghiệp</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#services">Dịch Vụ</a></li>
+                        <li><a href="#benefits">Lợi Ích</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </header>
+        
+            <section id="hero">
+                <h2>Tăng Tốc Chuyển Đổi Số Của Bạn Ngay Hôm Nay</h2>
+                <p>Chúng tôi cung cấp giải pháp chuyển đổi số toàn diện cho doanh nghiệp của bạn.</p>
+            </section>
+        
+            <section id="services">
+                <h2>Các Gói Dịch Vụ</h2>
+                <div class="service">
+                    <h3>Gói Cơ Bản</h3>
+                    <p>Giải pháp chuyển đổi số cơ bản cho doanh nghiệp nhỏ.</p>
+                </div>
+                <div class="service">
+                    <h3>Gói Nâng Cao</h3>
+                    <p>Giải pháp toàn diện cho doanh nghiệp vừa và lớn.</p>
+                </div>
+                <div class="service">
+                    <h3>Gói Tùy Chỉnh</h3>
+                    <p>Giải pháp tùy chỉnh theo nhu cầu cụ thể của bạn.</p>
+                </div>
+            </section>
+        
+            <section id="benefits">
+                <h2>Lợi Ích Khi Chọn Chúng Tôi</h2>
+                <ul>
+                    <li>Tăng hiệu suất làm việc.</li>
+                    <li>Cải thiện trải nghiệm khách hàng.</li>
+                    <li>Giảm chi phí vận hành.</li>
+                </ul>
+            </section>
+        
+            <section id="contact">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Tin Nhắn:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Gửi</button>
+                </form>
+            </section>
+        
+            <footer>
+                <p>&copy; 2024 Công Ty Chuyển Đổi Số. Tất cả quyền được bảo lưu.</p>
+            </footer>
+        </body>
+        </html>
+        
+    </h1>
+        
+        
+        </div>
+        <div id="tab6" class="tabcontent">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    <label for="username">Username/Email</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+        <div id="tab7" class="tabcontent">
+            <h1>Tài liệu Sinh viên</h1>
+    <div class="materials">
+        <div class="material-card">
+            <h3>Tài Liệu Toán Cao Cấp</h3>
+            <a href="toan_cao_cap.html" class="btn">Xem </a>
+            <a href="toan_cao_cap.pdf" class="btn">Tải  </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Toán Rời Rạc</h3>
+            <a href="toan_roi_rac.html" class="btn">Xem </a>
+            <a href="toan_roi_rac.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Vật Lý 1</h3>
+            <a href="vat_ly_1.html" class="btn">Xem </a>
+            <a href="vat_ly_1.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Pháp Luật Đại Cương</h3>
+            <a href="phap_luat_dai_cuong.html" class="btn">Xem </a>
+            <a href="phap_luat_dai_cuong.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Anh Văn 1</h3>
+            <a href="anh_van_1.html" class="btn">Xem </a>
+            <a href="anh_van_1.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài liệu Chủ Nghĩa Xã Hội Học</h3>
+            <a href="chu_nghia_xa_hoi_hoc.html" class="btn">Xem </a>
+            <a href="chu_nghia_xa_hoi_hoc.pdf" class="btn">Tải </a>
+        </div>
+    </div>
+    
+
+<script>
+    // JavaScript for tabs
+    document.getElementById("defaultOpen").click();
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    
+       
+        
+</script>
+
+</body>
+</html>
