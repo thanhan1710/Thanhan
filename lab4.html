@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Example</title>
+    <style>
+        /* CSS for tabs */
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .half {
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .left {
+        background: #f1f1f1;
+    }
+    
+    .right {
+        background: #d3d3d3;
+    }
+    
+    @media (max-width: 768px) {
+        .half {
+            width: 100%;
+            height: 50vh;
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+            background-color: #f1f1f1;
+            
+    }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #b6b4b4;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+
+        /* CSS for header, main, and footer */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+        }
+
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+       
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 5px 0;
+        }
+
+        /* Additional styling for tabs in the main section */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .pick-up {
+            margin-top: 20px;
+           
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .course {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .course img {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+        
+        .course h2 {
+            color: #333;
+        }
+        
+        .course p {
+            color: #666;
+        }
+        
+    </style>
+     <div class="half left">
+    </head>
+
+    <body>
+    </style>
+    
+    </head>
+    
+    <body>
+    
+    <div class="tab">
+    
+    <button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen">Business Operations </button>
+    <button class="tablinks" onclick="openTab(event, 'tab2')"> Cloud Computing</button>
+    <button class="tablinks" onclick="openTab(event, 'tab3')">Cybersecurity</button>
+    <button class="tablinks" onclick="openTab(event, 'tab4')">  Data Science  </button>
+    <button class="tablinks" onclick="openTab(event, 'tab5')">Development</button>
+    <button class="tablinks" onclick="openTab(event, 'tab6')">IT Pperations</button>
+    <button class="tablinks" onclick="openTab(event, 'tab7')"> Language Learning</button>
+    <button class="tablinks" onclick="openTab(event, 'tab8')"> Leadership & Management</button>
+    <button class="tablinks" onclick="openTab(event, 'tab9')">Marketing </button>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <header>
+        <h2>Welcome, Nguyen Thanh An</h2>
+        <p>Add your occupation and interests</p>
+    </header>
+    <div id="tab1" class="tabcontent">
+        <table>
+            
+            <tr>
+                <td rowspan="2">Weekly Streak<br>one ring down, one go to, keep it up!</td>
+                
+                <td>  <img src="images/Screenshot 2024-10-22 184905.png"alt= > 2 weeks Current streak </td>
+                <td rowspan="2"><img src="images/Screenshot 2024-10-22 185816.png"alt= ><br><a href="https://www.example.com" target="_blank">See all activity</a></td>
+            </tr>
+            
+            </tr>
+        </table>
+    
+        
+       
+        
+        </div>
+        
+        <div id="tab2" class="tabcontent">
+    
+            <h3>Tab 2 Content</h3>
+            
+            <p>Content for Tab 2 goes here.</p>
+            
+            </div>
+            
+            <div id="tab3" class="tabcontent">
+            
+            <h3>Tab 3 Content</h3>
+            
+            <p>Content for Tab 3 goes here.</p>
+            
+            </div>
+            
+            <div id="tab4" class="tabcontent">
+            
+            <h3>Tab 4 Content</h3>
+            
+            <p>Content for Tab 4 goes here.</p>
+            
+            </div>
+            
+            <div id="tab5" class="tabcontent">
+            
+            <h3>Tab 5 Content</h3>
+            
+            <p>Content for Tab 5 goes here.</p>
+            
+            </div>
+            
+            <div id="tab6" class="tabcontent">
+            
+            <h3>Tab 6 Content</h3>
+            
+            <p>Content for Tab 6 goes here.</p>
+            
+            </div>
+            
+            <div id="tab7" class="tabcontent">
+            
+            <h3>Tab 7 Content</h3>
+            
+            <p>Content for Tab 7 goes here.</p>
+            
+            </div>
+            
+            <div id="tab8" class="tabcontent">
+            
+            <h3>Tab 8 Content</h3>
+            
+            <p>Content for Tab 8 goes here.</p>
+            
+            </div>
+            
+            <div id="tab9" class="tabcontent">
+            
+            <h3>Tab 9 Content</h3>
+            
+            <p>Content for Tab 9 goes here.</p>
+            
+            </div>
+    <main>
+        
+    
+        <div class="tabs">
+            <button class="active">Courses</button>
+            <button>Learning Paths</button>
+            <button>Certification Preparation</button>
+        </div>
+        <div id="active" class="tabcontent">
+            <h3>Active Content</h3>
+            <p>Content for Active Tab goes here.</p>
+        </div>
+        <div class="pick-up">
+            <h2>Pick up where you left off</h2>
+         
+            
+    
+            
+            <img src="d:\My Documents\Downloads\—Pngtree—cartoon fire flame flat icon_8522617.png"alt= >
+            
+            
+        </div>
+    </main>
+    
+    <footer>
+        <p>You have visited the site 4 times</p>
+    </footer>
+    
+    <script>
+        // JavaScript for tabs
+        document.getElementById("defaultOpen").click();
+    
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    </div>
+    <div class="half right">
+        
+    </style>
+    </head>
+    <body>
+        <header>
+            
+            <p>Based on your certification interests, we recommend </p>
+            <a href="https://www.example.com" target="_blank">edit certification interests</a>
+        </header>
+    <div class="container">
+        <h1>Certification Courses Recommendations</h1>
+        <div class="course">
+            <img src="images/Screenshot 2024-10-22 183737.png" alt="Person">
+            <h2>Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 100</p>
+        </div>
+        <div class="course">
+            <img src="images/Screenshot 2024-10-22 183829.png" alt="Computer">
+            <h2>Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 120</p>
+        </div>
+        <div class="course">
+            <img src="images/Screenshot 2024-10-22 183940.png" alt="Book">
+            <h2>Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 90</p>
+        </div>
+        <div class="course">
+            <img src="images/Screenshot 2024-10-22 184005.png" alt="Tablet">
+            <h2>Spring Professional Certification Exam Tutorial - Module 02</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 80</p>
+        </div>
+    </div>
+    <header>
+            <h2>
+                <p>Personalize your learning experience</p>
+            </h2>
+        <p>Add your occupation and interests to get better content recomendations.</p>
+        <button class="button">add occupation and interets</button>
+    </header>
+    </body>
+    </div>
+
+
+</body>
+</html>
