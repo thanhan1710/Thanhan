@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia Sẻ Tài Liệu Học Tập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .category {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .category h2 {
+            color: #4CAF50;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-button {
+            background-color: #007BFF;
+            color: white;
+        }
+        .view-button {
+            background-color: #28a745;
+            color: white;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chia Sẻ Tài Liệu Học Tập</h1>
+
+    <div class="category">
+        <h2>Toán Học</h2>
+        
+        <div id="documentViewer" style="display: none;">
+            <iframe id="documentFrame1" frameborder="0"></iframe>
+            <iframe id="documentFrame2" frameborder="0"></iframe>
+            <span id="uploadDate"></span>
+            <button class="download-button" onclick="closeDocumentViewer();">Close</button>
+        </div>
+        <div class="button-container">
+            <button class="view-button" onclick="showDocuments('path/Algebra.pdf', 'path/Geometry.pdf', '2024-10-12');">Xem</button>
+            <button class="download-button" onclick="window.location.href='path/Algebra.pdf';">Tải xuống</button>
+            <input type="file" id="myFileInput" style="display: none;" onchange="handleFileUpload(event)">
+            <button class="download-button" onclick="document.getElementById('myFileInput').click();">Tải lên Tệp của tôi</button>
+        </div>
+        <ul class="file-list" id="fileList">
+            <li class="file-item" data-name="File C.txt">
+                <h3>File C.txt</h3>
+                <p>Kích thước: 2MB</p>
+            </li>
+            <li class="file-item" data-name="File B.pdf">
+                <h3>File B.pdf</h3>
+                <p>Kích thước: 1.5MB</p>
+            </li>
+            <li class="file-item" data-name="File A.docx">
+                <h3>File A.docx</h3>
+                <p>Kích thước: 1MB</p>
+            </li>
+        </ul>
+        
+        <script>
+        const fileList = document.getElementById('fileList');
+        const fileItems = Array.from(fileList.children);
+        
+        function sortByNameAZ() {
+            const sortedItems = fileItems.slice().sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+            fileList.innerHTML = '';
+            sortedItems.forEach(item => fileList.appendChild(item));
+        }
+        
+        // Thứ tự hiển thị ban đầu
+        sortByNameAZ();
+        
+        // Thêm nút cho việc sắp xếp
+        const sortByNameButton = document.createElement('button');
+        sortByNameButton.textContent = 'Sắp Xếp theo Tên A-Z';
+        sortByNameButton.addEventListener('click', sortByNameAZ);
+        document.body.appendChild(sortByNameButton);
+        </script>
+    </div>
+
+    <script>
+        function showDocuments(documentUrl1, documentUrl2, uploadDate) {
+            const documentFrame1 = document.getElementById('documentFrame1');
+            const documentFrame2 = document.getElementById('documentFrame2');
+            documentFrame1.src = documentUrl1;
+            documentFrame2.src = documentUrl2;
+            document.getElementById('documentViewer').style.display = 'block';
+            document.getElementById('uploadDate').innerText = 'Ngày tải lên: ' + uploadDate;
+        }
+
+        function closeDocumentViewer() {
+            document.getElementById('documentViewer').style.display = 'none';
+            document.getElementById('documentFrame1').src = '';
+            document.getElementById('documentFrame2').src = '';
+            document.getElementById('uploadDate').innerText = '';
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            // Xử lý tệp tải lên ở đây
+            console.log('Tệp được chọn:', file);
+        }
+    </script>
+
+</body>
+</html>
