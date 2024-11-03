@@ -881,211 +881,146 @@
    </div>
    <div id="tab9" class="tabcontent">
     <div class="container mt-5">
-        <!-- Header Section -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h1>My Learning</h1>
-          <p><strong>87hr 36min watched</strong> | <a href="#">View all activity</a></p>
-        </div>
-      
-        <!-- Navigation Tabs -->
-        <ul class="nav nav-tabs mb-4">
-          <li class="nav-item"><a class="nav-link active" href="#" onclick="showSection('all-courses')">All Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-paths')">Learning Paths</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('certifications')">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('archived')">Archived</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-tools')">Learning Tools</a></li>
-        </ul>
-      
-        <!-- All Courses Section with Sorting and Filtering -->
-        <div id="all-courses" class="section">
-          <div><h1 class="btn btn-light">Sort by</h1>
-              <h1 class="btn btn-light">filter by</h1>
-          </div>
-          <!-- Sorting and Filtering for All Courses only -->
-          <div class="d-flex justify-content-between align-items-center mb-4">
-              <div>
-           
-                  <label for="role"></label>
-                      <select id="role" required>
-                          <option value="">Recently Accessed</option>
-                          <option value="Admin">Admin</option>
-                          <option value="User">User</option>
-                          <!-- Additional roles can be added here -->
-                      </select>
-                      <select id="role" required>
-                          <option value="">Categories</option>
-                          <option value="Admin">Admin</option>
-                          <option value="User">User</option>
-                          <!-- Additional roles can be added here -->
-                      </select>
-                      <select id="role" required>
-                          <option value="">Progress</option>
-                          <option value="Admin">Admin</option>
-                          <option value="User">User</option>
-                          <!-- Additional roles can be added here -->
-                      </select>
-                      <select id="role" required>
-                          <option value="">Instructor</option>
-                          <option value="Admin">Admin</option>
-                          <option value="User">User</option>
-                          <!-- Additional roles can be added here -->
-                      </select>
-                      <button type="reset" class="reset-button">reset</button>
-                      <div class="error" id="roleError"></div>
-               
-              </div>
-              <div>
-              <input type="text" class="form-control" placeholder="Search my courses">
-            </div>
-          </div>
-      
-          <div class="row">
-            <!-- Course Card 1 -->
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-            <!-- Repeat for 5 more course cards -->
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="course-card">
-                <div class="course-img"></div>
-                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
-                <p>FSOFT Content Development</p>
-                <small>100% complete</small>
-                <div class="course-rating">⭐⭐⭐⭐⭐</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Learning Paths Section (Initially Hidden) -->
-        <div id="learning-paths" class="section" style="display: none;">
-          <h2>Learning Paths</h2>
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="path-card">
-                      <div class="d-flex align-items-center">
-                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
-                          <h5 class="path-title mb-0">Induction Training_GAAFOFY (VI)</h5>
-                      </div>
-                      <small>1 of 6 items complete</small>
-                      <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 16%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-              <!-- New Path Cards -->
-              <div class="col-md-6">
-                  <div class="path-card">
-                      <div class="d-flex align-items-center">
-                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
-                          <h5 class="path-title mb-0">Advanced Data Analysis (VI)</h5>
-                      </div>
-                      <small>3 of 10 items complete</small>
-                      <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="path-card">
-                      <div class="d-flex align-items-center">
-                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
-                          <h5 class="path-title mb-0">Project Management Essentials (VI)</h5>
-                      </div>
-                      <small>5 of 8 items complete</small>
-                      <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="path-card">
-                      <div class="d-flex align-items-center">
-                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
-                          <h5 class="path-title mb-0">Web Development Basics (VI)</h5>
-                      </div>
-                      <small>2 of 5 items complete</small>
-                      <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Placeholder for future cards -->
-              <div class="col-md-6">
-                  <div class="path-card">
-                      <div class="d-flex align-items-center">
-                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
-                          <h5 class="path-title mb-0">Future Learning Path (VI)</h5>
-                      </div>
-                      <small>0 of 6 items complete</small>
-                      <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>    
-      </div>
-      
-        <!-- Other Sections (Certifications, Archived, Learning Tools) -->
-        <div id="certifications" class="section" style="display: none;">
-          <h2>Certifications</h2>
-          <p>No certifications available.</p>
-        </div>
-      
-        <div id="archived" class="section" style="display: none;">
-          <h2>Archived</h2>
-          <p>No archived courses.</p>
-        </div>
-      
-        <div id="learning-tools" class="section" style="display: none;">
-          <h2>Learning Tools</h2>
-          <p>Available tools will be displayed here.</p>
+  <!-- Header Section -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>My Learning</h1>
+    <p><strong>87hr 36min watched</strong> | <a href="#">View all activity</a></p>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <ul class="nav nav-tabs mb-4">
+    <li class="nav-item"><a class="nav-link active" href="#" onclick="showSection('all-courses')">All Courses</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-paths')">Learning Paths</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('certifications')">Certifications</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('archived')">Archived</a></li>
+    <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-tools')">Learning Tools</a></li>
+  </ul>
+
+  <!-- All Courses Section with Sorting and Filtering -->
+  <div id="all-courses" class="section">
+    <div><h1 class="btn btn-light">Sort by</h1>
+        <h1 class="btn btn-light">filter by</h1>
+    </div>
+    <!-- Sorting and Filtering for All Courses only -->
+    <div class="row">
+      <!-- Course Card 1 -->
+      <div class="col-md-4">
+        <div class="course-card">
+          <div class="course-img"></div>
+          <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+          <p>FSOFT Content Development</p>
+          <small>100% complete</small>
+          <div class="course-rating">⭐⭐⭐⭐⭐</div>
         </div>
       </div>
-      
-   </div>
+      <!-- Repeat for 5 more course cards -->
+      <div class="col-md-4">
+        <div class="course-card">
+          <div class="course-img"></div>
+          <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+          <p>FSOFT Content Development</p>
+          <small>100% complete</small>
+          <div class="course-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="course-card">
+          <div class="course-img"></div>
+          <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+          <p>FSOFT Content Development</p>
+          <small>100% complete</small>
+          <div class="course-rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Learning Paths Section (Initially Hidden) -->
+  <div id="learning-paths" class="section" style="display: none;">
+    <h2>Learning Paths</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="path-card">
+                <div class="d-flex align-items-center">
+                    <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                    <h5 class="path-title mb-0">Induction Training_GAAFOFY (VI)</h5>
+                </div>
+                <small>1 of 6 items complete</small>
+                <div class="progress mt-2">
+                    <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 16%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <!-- New Path Cards -->
+        <div class="col-md-6">
+            <div class="path-card">
+                <div class="d-flex align-items-center">
+                    <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                    <h5 class="path-title mb-0">Advanced Data Analysis (VI)</h5>
+                </div>
+                <small>3 of 10 items complete</small>
+                <div class="progress mt-2">
+                    <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="path-card">
+                <div class="d-flex align-items-center">
+                    <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                    <h5 class="path-title mb-0">Project Management Essentials (VI)</h5>
+                </div>
+                <small>5 of 8 items complete</small>
+                <div class="progress mt-2">
+                    <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="path-card">
+                <div class="d-flex align-items-center">
+                    <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                    <h5 class="path-title mb-0">Web Development Basics (VI)</h5>
+                </div>
+                <small>2 of 5 items complete</small>
+                <div class="progress mt-2">
+                    <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Placeholder for future cards -->
+        <div class="col-md-6">
+            <div class="path-card">
+                <div class="d-flex align-items-center">
+                    <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                    <h5 class="path-title mb-0">Future Learning Path (VI)</h5>
+                </div>
+                <small>0 of 6 items complete</small>
+                <div class="progress mt-2">
+                    <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+  <!-- Other Sections (Certifications, Archived, Learning Tools) -->
+  <div id="certifications" class="section" style="display: none;">
+    <h2>Certifications</h2>
+    <p>No certifications available.</p>
+  </div>
+
+  <div id="archived" class="section" style="display: none;">
+    <h2>Archived</h2>
+    <p>No archived courses.</p>
+  </div>
+
+  <div id="learning-tools" class="section" style="display: none;">
+    <h2>Learning Tools</h2>
+    <p>Available tools will be displayed here.</p>
+  </div>
+</div>
+
 <script>
     // JavaScript for tabs
     document.getElementById("defaultOpen").click();
