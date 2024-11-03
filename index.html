@@ -7,7 +7,1245 @@
     <title>Tab Example</title>
     <style>
         /* CSS for tabs */
+        .tab {<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Example</title>
+    <style>
+        /* CSS for tabs */
         .tab {
+            overflow: hidden;
+            border: 1px solid #b6b4b4;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+
+        /* CSS for header, main, and footer */
+        header {
+            background-color: #4e6ff3;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+        }
+
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+       
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 5px 0;
+        }
+
+        /* Additional styling for tabs in the main section */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .pick-up {
+            margin-top: 20px;
+           
+        }
+        /* Basic Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        background-color: #f0f2f5;
+    }
+    /* Modal Styling */
+    .modal, .modal-second, .modal-confirmation {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        max-width: 100%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        display: none; /* Hidden by default */
+    }
+    .modal.active, .modal-second.active, .modal-confirmation.active {
+        display: block; /* Show when active */
+    }
+    .modal h2, .modal-second h2, .modal-confirmation h2 {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        color: #007bff;
+    }
+    /* Language Card Grid */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    .card {
+        padding: 20px;
+        background: #fff;
+        border-radius: 6px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+    .card .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .title h3 {
+        font-size: 1em;
+    }
+    .card p {
+        font-size: 0.9em;
+        color: #666;
+    }
+    .btn {
+        display: inline-block;
+        padding: 8px 15px;
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #fff;
+        background: #007bff;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .btn.guide {
+        background: #666;
+    }
+    /* Form Styling */
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 8px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        color: #fff;
+        background: #1b1b1b;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    /* Label Styling */
+    .label {
+        display: inline-block;
+        background-color: #8d5524;
+        color: #fff;
+        padding: 4px 8px;
+        font-size: 0.8em;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .modal {
+            width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background-color: #338af7;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        
+
+    .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .modal-body input[type="text"],
+        .modal-body select,
+        .modal-body textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .modal-body textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .code {
+            font-family: monospace;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+
+        .modal-footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .button {
+            padding: 8px 16px;
+            background-color: #338af7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #297acc;
+        }
+
+        /* Test Case Section */
+        .test-case-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .test-case-section input[type="text"] {
+            width: calc(50% - 10px);
+        }
+        
+    </style>
+</head>
+
+<body>
+</style>
+
+</head>
+
+<body>
+
+<div class="tab">
+
+<button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen">Home </button>
+<button class="tablinks" onclick="openTab(event, 'tab2')"> About</button>
+<button class="tablinks" onclick="openTab(event, 'tab3')">lab</button>
+
+
+<header>
+    <div id="tab1" class="tabcontent">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <input type="text" name="username" placeholder="Enter your username (Max 255 characters)" required>
+            <input type="password" name="password" placeholder="Enter your password (Max 255 characters)" required>
+            <input type="email" name="email" placeholder="Enter your email address (Max 255 characters)" required>
+            <input type="text" name="fullname" placeholder="Enter your full name">
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <input type="file" name="profilePicture" accept="image/*">
+            <div class="preview"></div>
+            <p>Account Created At: <span id="createdAt"></span></p>
+            <p>Last Updated At: <span id="updatedAt"></span></p>
+            <button type="submit" id="submitButton" disabled>Create Account</button>
+            <button type="button" id="cancelButton">Cancel</button>
+        </form>
+    </div>
+</header>
+
+    
+    <div id="tab2" class="tabcontent">
+
+      <h1>Curriculum Vitae</h1>
+        <p><strong>Nguyễn Thành An</strong></p>
+        <div class="contact-info section">
+            <p>Email: <a href="mailto:23130323@st.hcmuaf.edu.vn">23130001@st.hcmuaf.edu.vn</a></p>
+            <p>Phone: 0385836217</p>
+            <p>Address: 123 road , City XYZ</p>
+        </div>
+
+        <div class="section">
+            <h2>Introduce</h2>
+            <p>Hello! My name is An, and I’m currently a student majoring in Information Technology. I’m passionate about technology and excited about the opportunities it offers to solve real-world problems. My studies cover various aspects of IT, such as programming, database management, cybersecurity, and network systems, which help me build a solid foundation in the field.
+
+              I enjoy coding, and I’m particularly interested in software development and data science. I’ve learned programming languages like Python, Java, and C++, and I’m always eager to expand my skills by learning new technologies and tools. I also like working on projects, as they allow me to apply what I’ve learned in practical scenarios.
+              
+              In addition to my technical skills, I value teamwork and am committed to continuous self-improvement. I look forward to further developing my expertise in IT and contributing to innovative projects in the future. Thank you for taking the time to get to know me!</p>
+        </div>
+
+        <div class="section">
+            <h2>Work Experience</h2>
+            <h3>XYZ Company</h3>
+            <p><strong>Position:</strong> Programmer</p>
+            <p><strong>Period:</strong> 2020 - present</p>
+            <ul>
+                <li>Develop and maintain web applications.</li>
+                <li>Collaborate with design teams to improve user experience.</li>
+            </ul>
+            
+            <h3>ABC Company</h3>
+            <p><strong>Position:</strong> Intern</p>
+            <p><strong>Period:</strong> 2019 - 2020</p>
+            <ul>
+                <li>Support the development of small projects.</li>
+                <li>Participate in team meetings to discuss work progress.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p><strong>University Nong Lam</strong> - Major: Computer Science</p>
+            <p><strong>Graduation Year:</strong> 2019</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <p>HTML, CSS, JavaScript</p>
+                <p>React, Node.js</p>
+                <p>SQL database management</p>
+                <p>Communication and teamwork</p>
+            </div>
+        </div>
+
+        <p><em>Update date: 28/09/2024</em></p>
+
+        <div class="section">
+            <h2>Download CV</h2>
+            <p><a href="link_to_your_cv_file.pdf" download>File CV</a></p>
+        </div>
+        
+        
+        
+        </div>
+       
+        <div id="tab3" class="tabcontent">
+          <button class="tablinks" onclick="openTab(event, 'tab5')" id="defaultOpen">lab1</button>
+          <button class="tablinks" onclick="openTab(event, 'tab6')" id="defaultOpen">lab2</button>
+          <button class="tablinks" onclick="openTab(event, 'tab7')" id="defaultOpen">lab3</button>
+          <button class="tablinks" onclick="openTab(event, 'tab8')" id="defaultOpen">lab4</button>
+          <button class="tablinks" onclick="openTab(event, 'tab9')" id="defaultOpen">lab5</button>
+          <button class="tablinks" onclick="openTab(event, 'tab10')" id="defaultOpen">lab6</button>
+            <button class="tablinks" onclick="openTab(event, 'tab4')" id="defaultOpen">digital</button>
+          
+        </div>
+
+
+
+        
+        <div id="tab5" class="tabcontent">
+
+          <h1>Quản lý Nhân viên Văn Phòng</h1>
+
+<h2>Thêm Nhân Viên</h2>
+<form id="addForm">
+    <input type="text" id="name" placeholder="Tên Nhân viên" required>
+    <input type="text" id="subject" placeholder="chức vụ" required>
+    <input type="text" id="subject" placeholder="nhóm" required>
+    <button type="submit">Thêm</button>
+</form>
+
+<h2>Tìm kiếm Nhân viên</h2>
+<input type="text" id="searchInput" placeholder="Tìm theo tên" onkeyup="search()">
+
+<table>
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>phòng làm việc</th>
+            <th>chức vụ</th>
+        </tr>
+    </thead>
+    <tbody id="teacherTable">
+        <!-- Danh sách nhân viên sẽ được thêm vào đây -->
+    </tbody>
+</table>
+        </div>
+
+
+  
+          
+
+        
+
+
+
+
+        <div id="tab4" class="tabcontent">
+            <header>
+                <h1>Chuyển Đổi Số Doanh Nghiệp</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#services">Dịch Vụ</a></li>
+                        <li><a href="#benefits">Lợi Ích</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </header>
+        
+            <section id="hero">
+                <h2>Tăng Tốc Chuyển Đổi Số Của Bạn Ngay Hôm Nay</h2>
+                <p>Chúng tôi cung cấp giải pháp chuyển đổi số toàn diện cho doanh nghiệp của bạn.</p>
+            </section>
+        
+            <section id="services">
+                <h2>Các Gói Dịch Vụ</h2>
+                <div class="service">
+                    <h3>Gói Cơ Bản</h3>
+                    <p>Giải pháp chuyển đổi số cơ bản cho doanh nghiệp nhỏ.</p>
+                </div>
+                <div class="service">
+                    <h3>Gói Nâng Cao</h3>
+                    <p>Giải pháp toàn diện cho doanh nghiệp vừa và lớn.</p>
+                </div>
+                <div class="service">
+                    <h3>Gói Tùy Chỉnh</h3>
+                    <p>Giải pháp tùy chỉnh theo nhu cầu cụ thể của bạn.</p>
+                </div>
+            </section>
+        
+            <section id="benefits">
+                <h2>Lợi Ích Khi Chọn Chúng Tôi</h2>
+                <ul>
+                    <li>Tăng hiệu suất làm việc.</li>
+                    <li>Cải thiện trải nghiệm khách hàng.</li>
+                    <li>Giảm chi phí vận hành.</li>
+                </ul>
+            </section>
+        
+            <section id="contact">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Tin Nhắn:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Gửi</button>
+                </form>
+            </section>
+        
+            <footer>
+                <p>&copy; 2024 Công Ty Chuyển Đổi Số. Tất cả quyền được bảo lưu.</p>
+            </footer>
+        </body>
+        </html>
+        
+    </h1>
+        
+        
+        </div>
+        <div id="tab6" class="tabcontent">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form action="#" method="post">
+                    <label for="username">Username/Email</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                
+            </div>
+            
+        </div>
+      </div>
+
+        <div id="tab7" class="tabcontent">
+            <h1>Tài liệu Sinh viên</h1>
+        <div class="materials">
+        <div class="material-card">
+            <h3>Tài Liệu Toán Cao Cấp</h3>
+            <a href="toan_cao_cap.html" class="btn">Xem </a>
+            <a href="toan_cao_cap.pdf" class="btn">Tải  </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Toán Rời Rạc</h3>
+            <a href="toan_roi_rac.html" class="btn">Xem </a>
+            <a href="toan_roi_rac.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Vật Lý 1</h3>
+            <a href="vat_ly_1.html" class="btn">Xem </a>
+            <a href="vat_ly_1.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Pháp Luật Đại Cương</h3>
+            <a href="phap_luat_dai_cuong.html" class="btn">Xem </a>
+            <a href="phap_luat_dai_cuong.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài Liệu Anh Văn 1</h3>
+            <a href="anh_van_1.html" class="btn">Xem </a>
+            <a href="anh_van_1.pdf" class="btn">Tải </a>
+        </div>
+        <div class="material-card">
+            <h3>Tài liệu Chủ Nghĩa Xã Hội Học</h3>
+            <a href="chu_nghia_xa_hoi_hoc.html" class="btn">Xem </a>
+            <a href="chu_nghia_xa_hoi_hoc.pdf" class="btn">Tải </a>
+        </div>
+      </div>
+
+   </div>
+   
+    <div id="tab8" class="tabcontent">
+    </head>
+  
+    <body>
+    
+    <div class="tab">
+    
+    <button class="tablinks" onclick="openTab(event, 'tab11')" id="defaultOpen">Business Operations </button>
+    <button class="tablinks" onclick="openTab(event, 'tab12')"> Cloud Computing</button>
+    <button class="tablinks" onclick="openTab(event, 'tab13')">Cybersecurity</button>
+    <button class="tablinks" onclick="openTab(event, 'tab14')">  Data Science  </button>
+    <button class="tablinks" onclick="openTab(event, 'tab15')">Development</button>
+    <button class="tablinks" onclick="openTab(event, 'tab16')">IT Pperations</button>
+    <button class="tablinks" onclick="openTab(event, 'tab17')"> Language Learning</button>
+    <button class="tablinks" onclick="openTab(event, 'tab18')"> Leadership & Management</button>
+    <button class="tablinks" onclick="openTab(event, 'tab19')">Marketing </button>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <header>
+        <h2>Welcome, Nguyen Thanh An</h2>
+        <p>Add your occupation and interests</p>
+    </header>
+    <div id="tab11" class="tabcontent">
+        <table>
+            
+            <tr>
+                <td rowspan="2">Weekly Streak<br>one ring down, one go to, keep it up!</td>
+                
+                <td>  <img src="images/Screenshot 2024-10-22 184905.png"alt= > 2 weeks Current streak </td>
+                <td rowspan="2"><img src="images/Screenshot 2024-10-22 185816.png"alt= ><br><a href="https://www.example.com" target="_blank">See all activity</a></td>
+            </tr>
+            
+            </tr>
+        </table>
+    
+        
+       
+        
+        </div>
+        
+        <div id="tab12" class="tabcontent">
+    
+            <h3>Tab 2 Content</h3>
+            
+            <p>Content for Tab 2 goes here.</p>
+            
+            </div>
+            
+            <div id="tab13" class="tabcontent">
+            
+            <h3>Tab 3 Content</h3>
+            
+            <p>Content for Tab 3 goes here.</p>
+            
+            </div>
+            
+            <div id="tab14" class="tabcontent">
+            
+            <h3>Tab 4 Content</h3>
+            
+            <p>Content for Tab 4 goes here.</p>
+            
+            </div>
+            
+            <div id="tab15" class="tabcontent">
+            
+            <h3>Tab 5 Content</h3>
+            
+            <p>Content for Tab 5 goes here.</p>
+            
+            </div>
+            
+            <div id="tab16" class="tabcontent">
+            
+            <h3>Tab 6 Content</h3>
+            
+            <p>Content for Tab 6 goes here.</p>
+            
+            </div>
+            
+            <div id="tab17" class="tabcontent">
+            
+            <h3>Tab 7 Content</h3>
+            
+            <p>Content for Tab 7 goes here.</p>
+            
+            </div>
+            
+            <div id="tab18" class="tabcontent">
+            
+            <h3>Tab 8 Content</h3>
+            
+            <p>Content for Tab 8 goes here.</p>
+            
+            </div>
+            
+            <div id="tab19" class="tabcontent">
+            
+            <h3>Tab 9 Content</h3>
+            
+            <p>Content for Tab 9 goes here.</p>
+            
+            </div>
+    <main>
+        
+    
+        <div class="tabs">
+            <button class="active">Courses</button>
+            <button>Learning Paths</button>
+            <button>Certification Preparation</button>
+        </div>
+        <div id="active" class="tabcontent">
+            <h3>Active Content</h3>
+            <p>Content for Active Tab goes here.</p>
+        </div>
+        <div class="pick-up">
+            <h2>Pick up where you left off</h2>
+         
+            
+    
+            
+            <img src="d:\My Documents\Downloads\—Pngtree—cartoon fire flame flat icon_8522617.png"alt= >
+            
+            
+        </div>
+    </main>
+    
+    <footer>
+        <p>You have visited the site 4 times</p>
+    </footer>
+    <div class="half right">
+        
+    </style>
+    </head>
+    <body>
+        <header>
+            
+            <p>Based on your certification interests, we recommend </p>
+            <a href="https://www.example.com" target="_blank">edit certification interests</a>
+        </header>
+    <div class="container">
+        <h1>Certification Courses Recommendations</h1>
+        <div class="course">
+            <img src="https://images.credly.com/images/aeada4ab-bd8f-4c3c-bf4a-a9f2f4e04dd2/02a_Java_Foundations_Associate.png" alt="Person" style="height: 40px;">
+            <h2>Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 100</p>
+        </div>
+        <div class="course">
+            <img src="https://education.oracle.com/file/general/Oracle-Certification-badge_OC-Professional.png" alt="Computer" style="height: 40px;">
+            <h2>Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 120</p>
+        </div>
+        <div class="course">
+            <img src="https://th.bing.com/th/id/OIP.zq0-x0XVxPFGHFzAGz6bZgAAAA?rs=1&pid=ImgDetMain" alt="Book"style="height: 40px;">
+            <h2>Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 90</p>
+        </div>
+        <div class="course">
+            <img src="https://images.credly.com/images/b6cef9d6-c6a3-4ed9-bfe6-25d05b3c6fbe/image.png" alt="Tablet"style="height: 40px;">
+            <h2>Spring Professional Certification Exam Tutorial - Module 02</h2>
+            <p>Rating: 4.6 stars | Number of Reviews: 80</p>
+        </div>
+    </div>
+    <header>
+            <h2>
+                <p>Personalize your learning experience</p>
+            </h2>
+        <p>Add your occupation and interests to get better content recomendations.</p>
+        <button class="button">add occupation and interets</button>
+    </header>
+    </div>
+  </div>
+   <div id="tab9" class="tabcontent">
+
+   </div>
+   <div id="tab10" class="tabcontent">
+      <!-- Main Modal Structure -->
+<div class="modal active" id="mainModal">
+  <h2>New Unit Test Custom Challenge</h2>
+
+  <!-- Language Selection Grid -->
+  <div class="grid">
+      <div class="card">
+          <h3>JavaScript 
+              <span class="label">Mocha</span></h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mocha_logo.svg/512px-Mocha_logo.svg.png"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div>
+      <div class="card">
+          <h3>TypeScript <span class="label">Mocha</span></h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div>
+      <div class="card">
+          <h3>Python <span class="label">Pytest</span></h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div>
+      <div class="card">
+          <h3>PHP <span class="label">PHPUnit</span></h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXalRyF7J7QRLkJfMwCMqA47UUDCFdHJ-dFQ&s"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div>
+      <div class="card">
+          <h3>Java <span class="label">JUnit</span></h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIdQevDgWPW8fugNMdTac2T6WRsmTXzSUJZA&s"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div><div class="card">
+          <h3>Kotiln <span class="label">JUnit</span></h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1200px-Kotlin_Icon.png"alt= ""class="mr-2" style="height: 40px;">
+          <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+          <button class="btn continue-btn">Continue</button>
+          <a href="#" class="btn guide">Guide</a>
+      </div>
+      <!-- Additional cards can be added here -->
+  </div>
+
+</div>
+
+<!-- Second Modal for Challenge Setup -->
+<div class="modal-second" id="challengeModal">
+  <h2>Set Up Challenge</h2>
+  <div class="form-group">
+      <label for="title">Challenge Title</label>
+      <input type="text" id="title" placeholder="Enter title">
+  </div>
+  <div class="form-group">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="description">Short Description</label>
+      <input type="text" id="description" placeholder="Optional short description about this challenge...">
+  </div>
+  <button class="submit-btn" onclick="openConfirmationModal()">Click here to open the Java(JUnit) IDE and edit your code -></button>
+</div>
+
+<!-- Third Modal for Confirmation -->
+<div class="modal-confirmation" id="confirmationModal">
+  <h2>Edit custom challenge</h2>
+      <span>Last modified by sontth1@fpt.com on Apr 01 2024</span>
+ 
+  <div class="modal-body">
+      <label for="challenge-name">Challenge Name</label>
+      <input type="text" id="challenge-name" value="DSA ET Opt7 01">
+
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+          <option>Easy</option>
+          <option>Medium</option>
+          <option>Hard</option>
+      </select>
+
+      <label for="description">Short Description</label>
+      <input type="text" id="description" value="This is a private challenge">
+
+      <label for="problem-statement">Problem Statement</label>
+      <div class="code">
+          Write a program to count the number of elements as odd numbers in the array.<br>
+          Example: Array A = { 12, 31, 25, 17, 40, 10, 29 }<br>
+          => Number of elements as odd number in array A is: 4
+      </div>
+
+      <label>Input Type</label>
+      <input type="text" value="Array of integers" disabled>
+
+      <label>Output Type</label>
+      <input type="text" value="Integer" disabled>
+
+      <!-- Test Cases -->
+      <div>
+          <label>Required Test Cases</label>
+          <div class="test-case-section">
+              <input type="text" value="12, 31, 25, 17, 40, 10, 29">
+              <input type="text" value="4">
+          </div>
+          <div class="test-case-section">
+              <input type="text" value="1,2,3,4,5,6,7,8,9,10">
+              <input type="text" value="5">
+          </div>
+          <div class="test-case-section">
+              <input type="text" value="1,3,5">
+              <input type="text" value="3">
+          </div>
+          <!-- Add more test case sections as needed -->
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button class="button">Update custom challenge</button>
+  </div>
+</div>
+</div>
+   </div>
+   <div id="tab9" class="tabcontent">
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1>My Learning</h1>
+          <p><strong>87hr 36min watched</strong> | <a href="#">View all activity</a></p>
+        </div>
+      
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4">
+          <li class="nav-item"><a class="nav-link active" href="#" onclick="showSection('all-courses')">All Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-paths')">Learning Paths</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('certifications')">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('archived')">Archived</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('learning-tools')">Learning Tools</a></li>
+        </ul>
+      
+        <!-- All Courses Section with Sorting and Filtering -->
+        <div id="all-courses" class="section">
+          <div><h1 class="btn btn-light">Sort by</h1>
+              <h1 class="btn btn-light">filter by</h1>
+          </div>
+          <!-- Sorting and Filtering for All Courses only -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+           
+                  <label for="role"></label>
+                      <select id="role" required>
+                          <option value="">Recently Accessed</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                          <!-- Additional roles can be added here -->
+                      </select>
+                      <select id="role" required>
+                          <option value="">Categories</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                          <!-- Additional roles can be added here -->
+                      </select>
+                      <select id="role" required>
+                          <option value="">Progress</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                          <!-- Additional roles can be added here -->
+                      </select>
+                      <select id="role" required>
+                          <option value="">Instructor</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                          <!-- Additional roles can be added here -->
+                      </select>
+                      <button type="reset" class="reset-button">reset</button>
+                      <div class="error" id="roleError"></div>
+               
+              </div>
+              <div>
+              <input type="text" class="form-control" placeholder="Search my courses">
+            </div>
+          </div>
+      
+          <div class="row">
+            <!-- Course Card 1 -->
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <!-- Repeat for 5 more course cards -->
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="course-card">
+                <div class="course-img"></div>
+                <h5 class="course-title mt-3">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h5>
+                <p>FSOFT Content Development</p>
+                <small>100% complete</small>
+                <div class="course-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Learning Paths Section (Initially Hidden) -->
+        <div id="learning-paths" class="section" style="display: none;">
+          <h2>Learning Paths</h2>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="path-card">
+                      <div class="d-flex align-items-center">
+                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                          <h5 class="path-title mb-0">Induction Training_GAAFOFY (VI)</h5>
+                      </div>
+                      <small>1 of 6 items complete</small>
+                      <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 16%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+              <!-- New Path Cards -->
+              <div class="col-md-6">
+                  <div class="path-card">
+                      <div class="d-flex align-items-center">
+                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                          <h5 class="path-title mb-0">Advanced Data Analysis (VI)</h5>
+                      </div>
+                      <small>3 of 10 items complete</small>
+                      <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="path-card">
+                      <div class="d-flex align-items-center">
+                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                          <h5 class="path-title mb-0">Project Management Essentials (VI)</h5>
+                      </div>
+                      <small>5 of 8 items complete</small>
+                      <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="path-card">
+                      <div class="d-flex align-items-center">
+                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                          <h5 class="path-title mb-0">Web Development Basics (VI)</h5>
+                      </div>
+                      <small>2 of 5 items complete</small>
+                      <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Placeholder for future cards -->
+              <div class="col-md-6">
+                  <div class="path-card">
+                      <div class="d-flex align-items-center">
+                          <img src="path-logo.png" alt="FPT Logo" class="mr-2" style="height: 40px;">
+                          <h5 class="path-title mb-0">Future Learning Path (VI)</h5>
+                      </div>
+                      <small>0 of 6 items complete</small>
+                      <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-purple" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>    
+      </div>
+      
+        <!-- Other Sections (Certifications, Archived, Learning Tools) -->
+        <div id="certifications" class="section" style="display: none;">
+          <h2>Certifications</h2>
+          <p>No certifications available.</p>
+        </div>
+      
+        <div id="archived" class="section" style="display: none;">
+          <h2>Archived</h2>
+          <p>No archived courses.</p>
+        </div>
+      
+        <div id="learning-tools" class="section" style="display: none;">
+          <h2>Learning Tools</h2>
+          <p>Available tools will be displayed here.</p>
+        </div>
+      </div>
+      
+   </div>
+<script>
+    // JavaScript for tabs
+    document.getElementById("defaultOpen").click();
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    const teacherTable = document.getElementById('teacherTable');
+    const addForm = document.getElementById('addForm');
+
+    // Mảng lưu trữ nhân viên
+    let teachers = [];
+
+    // Thêm nhân viên
+    addForm.onsubmit = function (e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const subject = document.getElementById('subject').value;
+
+        const staff = { name, subject };
+        teachers.push(staff);
+        renderTable();
+        addForm.reset();
+    };
+
+    // Hiển thị danh sách nhân viên
+    function renderTable() {
+        teacherTable.innerHTML = '';
+        teachers.forEach((staff, index) => {
+            const row = `<tr>
+                <td>${staff.name}</td>
+                <td>${staff.subject}</td>
+                <td>
+                    <button onclick="editTeacher(${index})">Sửa</button>
+                    <button onclick="deleteTeacher(${index})">Xóa</button>
+                </td>
+            </tr>`;
+            staffTable.innerHTML += row;
+        });
+    }
+
+    // Sửa nhân viên
+    function editStaff(index) {
+        const name = prompt("Nhập tên mới:", teachers[index].name);
+        const subject = prompt("Nhập phòng mới:", staffs[index].subject);
+        if (name && subject) {
+            staffs[index] = { name, subject };
+            renderTable();
+        }
+    }
+
+    // Xóa nhân viên
+    function deleteTeacher(index) {
+        teachers.splice(index, 1);
+        renderTable();
+    }
+
+    // Tìm kiếm nhân viên
+    function searchStaff() {
+const input = document.getElementById('searchInput').value.toLowerCase();}
+       // JavaScript for tabs
+       document.getElementById("defaultOpen").click();
+    
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    
+        // JavaScript for tabs
+        document.getElementById("defaultOpen").click();
+    
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    // JavaScript to handle modal switching
+    const continueButtons = document.querySelectorAll('.continue-btn');
+    const mainModal = document.getElementById('mainModal');
+    const challengeModal = document.getElementById('challengeModal');
+    const confirmationModal = document.getElementById('confirmationModal');
+
+    // Open the second modal when any "Continue" button is clicked
+    continueButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            mainModal.classList.remove('active');
+            challengeModal.classList.add('active');
+        });
+    });
+
+    // Function to open the confirmation modal
+    function openConfirmationModal() {
+        challengeModal.classList.remove('active');
+        confirmationModal.classList.add('active');
+    }
+
+    // Function to close the confirmation modal and return to the main screen
+    function closeConfirmationModal() {
+        confirmationModal.classList.remove('active');
+        mainModal.classList.add('active');
+    }
+        
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.display = 'none';
+    });
+    // Show the selected section
+    document.getElementById(sectionId).style.display = 'block';
+    
+    // Update active tab
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelector(`.nav-link[onclick="showSection('${sectionId}')"]`).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
+
             overflow: hidden;
             border: 1px solid #b6b4b4;
             background-color: #f1f1f1;
